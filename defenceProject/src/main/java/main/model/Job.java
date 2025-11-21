@@ -1,4 +1,4 @@
-package main.model;
+package app.model;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -42,25 +42,26 @@ public class Job {
 
     private String payCycle;
 
+    private LocalDate publishDate;
+
+    private boolean active;
+
+    private UUID appliedUser;
+
     private String summary;
 
     private String description;
 
     private String requirements;
 
-    private LocalDate publishDate;
+    private LocalDate postedOn;
 
     private LocalDate deadline;
 
-    private boolean active;
-
-    private LocalDate postedOn;
+    @OneToMany(mappedBy = "job")
+    private List<Application> applications;
 
     @Column(nullable = false)
     private UUID creatorId;
 
-    private UUID appliedUser;
-
-    @OneToMany(mappedBy = "job")
-    private List<Application> applications;
 }

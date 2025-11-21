@@ -60,6 +60,7 @@ public class JobService {
     }
 
     public void createJob(CreateJobRequest request, UserData userData) {
+        
         Job job = Job.builder()
                 .title(request.getTitle())
                 .team(request.getTeam())

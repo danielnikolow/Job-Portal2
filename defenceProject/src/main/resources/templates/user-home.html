@@ -81,13 +81,13 @@
                         <!--                        </div>-->
                     </div>
 
-                    <a class="profile-item" th:href="@{/recruiter/jobs/new}" role="menuitem">
+                    <a class="profile-item" th:href="@{/recruiter/jobs/new}" th:if="${user.role == T(app.model.UserRole).RECRUITER}" role="menuitem">
                         <svg viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M20 7h-4V6a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v1H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2Zm-10-1h4v1h-4V6Z"/>
                         </svg>
                         <span>Create Job</span>
                     </a>
-                    <a class="profile-item" th:href="@{/recruiter-applications}" role="menuitem">
+                    <a class="profile-item" th:href="@{/recruiter-applications}" th:if="${user.role == T(app.model.UserRole).RECRUITER}" role="menuitem">
                         <svg viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M20 7h-4V6a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v1H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2Zm-10-1h4v1h-4V6Z"/>
                         </svg>
